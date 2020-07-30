@@ -1,1 +1,24 @@
-<h2>App orks</h2>
+<div class="container">
+<h2>{{title}}</h2>
+<input type="text" style="margin-right: 20px" #newText />
+<button (click)="addTodo(newText.value); newText.value=''" style="color: black;">Add items</button>
+
+<table>
+  <tr>
+    <th>Label</th>
+    <th>Status</th>
+    <th>Quantity</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let t1 of t">
+    <td>{{t1.label}}</td>
+    <td>{{t1.quantity}}</td>
+    <td>{{t1.status ? '&#10003;' : '&#10005;'}}</td>
+    <td>
+      <button (click)="delTodo(t1)">Delete</button>
+    </td>
+
+  </tr>
+</table>
+</div>
+
